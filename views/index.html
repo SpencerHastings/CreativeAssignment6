@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<title>User Login and Sessions</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+<body>
+    <div class="container">
+        <div ng-controller="myController">
+            <h1 class="display-4" id="welcomeText">
+                User:
+                <%= username %>
+            </h1>
+            <div id="colorText">
+                <h5>
+                    Your favorite quote is:<br>
+                    <%= color %>
+                </h5>
+            </div>
+            <a id="logoutLink" href="/logout" class="my-2">Logout</a>
+            <br>
+            <a id="editLink" href="/user" class="my-2">Edit User / Add Quote</a>
+        </div>
+        <hr>
+        <span id="indexMsg">
+        <%= msg %>
+    </span>
+        <hr>
+        <h1>Favorite Quotes from All Users</h1>
+        <ul class="list-group">
+            <% for(var i=0; i<quotes.length; i++) { %>
+                <li class="list-group-item">
+                    <%= quotes[i] %>
+                </li>
+                <% } %>
+        </ul>
+
+        <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+        <script src="/javascripts/my_app.js"></script>
+    </div>
+</body>
+
+
+
+</html>
